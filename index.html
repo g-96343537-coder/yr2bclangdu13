@@ -9,7 +9,7 @@
     :root{ 
         --bg: #fdf2f8; 
         --card: #ffffff; 
-        --accent: #4fd1c5; /* 更改为青绿色，对应绘本风格 */
+        --accent: #4fd1c5; /* 青绿色 */
         --accent-dark: #319795;
         --accent-soft: #e6fffa;
         --text-main: #2d3748; 
@@ -22,7 +22,15 @@
         margin: 0;
         font-family: "PingFang SC", "Microsoft YaHei", "Nunito", sans-serif;
         background-color: var(--bg);
-        background-image: radial-gradient(circle at 10% 20%, rgb(230, 255, 250) 0%, rgb(240, 253, 244) 90%);
+        
+        /* --- 修改处：设置线上背景图 --- */
+        background-image: url('https://img.freepik.com/premium-vector/sunny-blue-cloud-kids-background-011_615845-621.jpg?w=2000');
+        background-size: cover;       /* 确保铺满 */
+        background-position: center;  /* 居中显示 */
+        background-attachment: fixed; /* 固定背景，防止滚动时移动 */
+        background-repeat: no-repeat;
+        /* --------------------------- */
+        
         color: var(--text-main);
         height: 100vh;
         overflow-x: hidden;
@@ -40,10 +48,10 @@
     .card {
         width: 100%;
         max-width: 680px;
-        background: var(--card);
+        background: var(--card); /* 保持白色卡片背景，防止看不清文字 */
         border-radius: 30px;
         padding: 40px 30px;
-        box-shadow: var(--shadow-soft), var(--shadow-card);
+        box-shadow: 0 15px 50px rgba(0,0,0,0.1), var(--shadow-card);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -286,10 +294,10 @@
   </style>
 
   <script>
-    // Web App URL (GAS)
-    const GAS_URL = "https://script.google.com/macros/s/AKfycbxmYyVnw2QR0eH-IlwkPmu2zhFlz8zy39fZy721l7Hw0jsDFVdDrLg2XU4GGwAkQpIz/exec";
+    // Web App URL (GAS) - 修改处：已更新为新的URL
+    const GAS_URL = "https://script.google.com/macros/s/AKfycbwX8fQhPWec89TxvYqokb2JwxN7ZM7kRbWBvk3wGbgfDv_cTL2XlBmtfSFuZjk2GlPL/exec";
     
-    // ⚠️ 课文内容：坐椅子 (已替换)
+    // ⚠️ 课文内容：坐椅子
     const sentences = [
       "当我坐上第一把椅子，我是船长，我把船开向大海。穿过大雾，穿过海浪，不怕危险，我和海盗作战！",
       "当我坐上第二把椅子，我是飞行员，我飞向月亮，月亮冲我微笑，一步一步走来欢迎我！",
@@ -439,4 +447,5 @@
     };
   </script>
 </body>
+
 </html>
